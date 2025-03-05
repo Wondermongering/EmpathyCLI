@@ -310,4 +310,124 @@ void displayResources(const ResourceMap& resources) {
             
             for (const auto& resource : moodResources) {
                 std::cout << "  - " << resource.title << std::endl;
-                std::cout << "    "
+                std::cout << "    " << resource.description << std::endl;
+                std::cout << "    URL: " << resource.url << std::endl;
+                std::cout << std::endl;
+            }
+        }
+    }
+    
+    std::cout << std::endl;
+    std::cout << "Press Enter to continue...";
+    std::cin.get();
+}
+
+// Function to clear the screen (cross-platform)
+void clearScreen() {
+#ifdef _WIN32
+    system("cls");
+#else
+    system("clear");
+#endif
+}
+
+// Function to confirm an action
+bool confirmAction(const std::string& message) {
+    std::cout << message;
+    std::string response;
+    std::getline(std::cin, response);
+    
+    // Convert to lowercase
+    std::transform(response.begin(), response.end(), response.begin(),
+                  [](unsigned char c){ return std::tolower(c); });
+    
+    return response == "y" || response == "yes";
+}
+
+// Function to display resources based on mood
+void displayResourcesBasedOnMood(const MoodEntry& entry, const ResourceMap& resources) {
+    std::cout << "Based on your mood, here are some resources that might help:" << std::endl;
+    std::cout << std::endl;
+    
+    // Check for score-based resources first
+    auto scoreResources = resources.getResourcesForScore(entry.score);
+    
+    // Extract words from the description for mood-based resources
+    std::istringstream iss(entry.description);
+    std::string word;
+    std::vector<Resource> moodResources;
+    
+    while (iss >> word) {
+        // Convert to lowercase
+        std::transform(word.begin(), word.end(), word.begin(),
+                      [](unsigned char c){ return std::tolower(c); });
+        
+        // Remove punctuation
+        word.erase(std::remove_if(word.begin(), word.end(),
+                                 [](unsigned char c){ return std::ispunct(c); }),
+                  word.end());
+        
+        // Get resources for this word
+        auto wordResources = resources.getResourcesForMood(word);
+        
+        // Add to our collection
+        moodResources.insert(moodResources.end(), wordResources.begin(), wordResources.end());
+    }
+    
+    // Combine both sets of resources
+    std::vector<Resource> allResources = scoreResources;
+    allResources.insert(allResources.end(), moodResources.begin(), moodResources.end());
+    
+    // Display resources or a message if none found
+    if (allResources.empty()) {
+        std::cout << "No specific resources found for your current mood." << std::endl;
+        std::cout << "You can browse all available resources from the main menu." << std::endl;
+    } else {
+        // Display up to 3 resources to avoid overwhelming
+        int count = 0;
+        for (const auto& resource : allResources) {
+            if (count >= 3) break;
+            
+            std::cout << count + 1 << ". " << resource.title << std::endl;
+            std::cout << "   " << resource.description << std::endl;
+            std::cout << "   URL: " << resource.url << std::endl;
+            std::cout << std::endl;
+            count++;
+        }
+        
+        if (allResources.size() > 3) {
+            std::cout << "... and " << allResources.size() - 3 << " more resources available from the main menu." << std::endl;
+        }
+    }
+}
+
+// Function to format timestamp for display
+std::string formatTimestamp(const std::chrono::system_clock::time_point& timestamp) {
+    auto timeT = std::chrono::system_clock::to_time_t(timestamp);
+    std::stringstream ss;
+    ss << std::put_time(std::localtime(&timeT), "%Y-%m-%d %H:%M:%S");
+    return ss.str();
+}
+
+// Function to get a random encouraging message
+std::string getRandomEncouragement() {
+    static const std::vector<std::string> encouragements = {
+        "Remember that feelings are temporary and will pass.",
+        "Taking time to check in with yourself is an act of self-care.",
+        "You're doing great by being mindful of your emotions.",
+        "Every small step toward self-awareness matters.",
+        "Your feelings are valid, whatever they may be.",
+        "Being honest about your emotions takes courage.",
+        "Self-reflection is a powerful tool for growth.",
+        "You're not alone in how you feel.",
+        "I appreciate you sharing how you're feeling today.",
+        "Recognizing your emotions is the first step toward managing them."
+    };
+    
+    // Random number generator
+    static std::random_device rd;
+    static std::mt19937 gen(rd());
+    std::uniform_int_distribution<> distrib(0, encouragements.size() - 1);
+    
+    return encouragements[distrib(gen)];
+}
