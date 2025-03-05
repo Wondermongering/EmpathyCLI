@@ -1,0 +1,138 @@
+{
+  "moodResources": {
+    "sad": [
+      {
+        "title": "5-Minute Meditation",
+        "url": "https://www.youtube.com/watch?v=inpok4MKVLM",
+        "description": "A short meditation to help center yourself"
+      },
+      {
+        "title": "Uplifting Music Playlist",
+        "url": "https://open.spotify.com/playlist/37i9dQZF1DX3rxVfibe1L0",
+        "description": "Music that can help lift your mood"
+      }
+    ],
+    "anxious": [
+      {
+        "title": "Deep Breathing Exercise",
+        "url": "https://www.health.harvard.edu/lung-health-and-disease/learning-diaphragmatic-breathing",
+        "description": "Learn how to practice deep diaphragmatic breathing"
+      },
+      {
+        "title": "Grounding Techniques",
+        "url": "https://www.healthline.com/health/grounding-techniques",
+        "description": "Simple exercises to stay present and reduce anxiety"
+      }
+    ],
+    "stressed": [
+      {
+        "title": "Progressive Muscle Relaxation",
+        "url": "https://www.healthline.com/health/progressive-muscle-relaxation",
+        "description": "A technique to relax your body and mind"
+      },
+      {
+        "title": "Mindful Walking Guide",
+        "url": "https://www.mindful.org/daily-mindful-walking-practice/",
+        "description": "How to incorporate mindfulness into a simple walk"
+      }
+    ],
+    "angry": [
+      {
+        "title": "Anger Management Techniques",
+        "url": "https://www.mayoclinic.org/healthy-lifestyle/adult-health/in-depth/anger-management/art-20045434",
+        "description": "Healthy ways to express and deal with anger"
+      },
+      {
+        "title": "Counting Technique",
+        "url": "https://www.healthline.com/health/mental-health/how-to-control-anger",
+        "description": "Simple counting exercises to defuse anger in the moment"
+      }
+    ],
+    "tired": [
+      {
+        "title": "Energy-Boosting Tips",
+        "url": "https://www.health.harvard.edu/healthbeat/9-tips-to-boost-your-energy-naturally",
+        "description": "Natural ways to increase your energy levels"
+      },
+      {
+        "title": "Better Sleep Guide",
+        "url": "https://www.sleepfoundation.org/sleep-hygiene/healthy-sleep-tips",
+        "description": "Tips for improving your sleep quality"
+      }
+    ],
+    "lonely": [
+      {
+        "title": "Connection Exercises",
+        "url": "https://www.psychologytoday.com/us/blog/click-here-happiness/202101/8-ways-feel-less-lonely-and-more-connected",
+        "description": "Ways to feel more connected to others"
+      },
+      {
+        "title": "Online Communities",
+        "url": "https://www.reddit.com/r/MakeNewFriendsHere/",
+        "description": "Places to connect with others online"
+      }
+    ],
+    "overwhelmed": [
+      {
+        "title": "Overwhelm First Aid",
+        "url": "https://www.mindful.org/a-mindfulness-practice-for-when-youre-overwhelmed/",
+        "description": "A simple practice for when you're feeling overwhelmed"
+      },
+      {
+        "title": "Task Prioritization Method",
+        "url": "https://todoist.com/productivity-methods/eisenhower-matrix",
+        "description": "A method to prioritize tasks when everything feels important"
+      }
+    ]
+  },
+  "scoreResources": {
+    "1": [
+      {
+        "title": "Crisis Text Line",
+        "url": "https://www.crisistextline.org/",
+        "description": "Text HOME to 741741 to connect with a Crisis Counselor"
+      },
+      {
+        "title": "National Suicide Prevention Lifeline",
+        "url": "https://suicidepreventionlifeline.org/",
+        "description": "Call 988 or 1-800-273-8255 available 24/7"
+      }
+    ],
+    "2": [
+      {
+        "title": "7 Ways to Boost Your Mood",
+        "url": "https://www.psychologytoday.com/us/blog/click-here-happiness/201801/how-boost-your-mood-7-ways-feeling-happier-every-day",
+        "description": "Quick strategies to improve your mood"
+      },
+      {
+        "title": "Self-Care Guide",
+        "url": "https://www.verywellmind.com/self-care-strategies-overall-stress-reduction-3144729",
+        "description": "A complete guide to self-care practices"
+      }
+    ],
+    "3": [
+      {
+        "title": "Self-Compassion Exercise",
+        "url": "https://self-compassion.org/exercise-2-self-compassion-break/",
+        "description": "A brief exercise to be kinder to yourself"
+      },
+      {
+        "title": "Mood-Boosting Activities",
+        "url": "https://www.verywellmind.com/how-to-boost-your-mood-with-simple-activities-3144889",
+        "description": "Simple activities that can improve your mood"
+      }
+    ],
+    "4": [
+      {
+        "title": "Gratitude Journaling Guide",
+        "url": "https://greatergood.berkeley.edu/article/item/how_gratitude_changes_you_and_your_brain",
+        "description": "How to start a gratitude practice"
+      },
+      {
+        "title": "Nature and Mood",
+        "url": "https://www.apa.org/monitor/2020/04/nurtured-nature",
+        "description": "How spending time in nature can improve mood"
+      }
+    ]
+  }
+}
